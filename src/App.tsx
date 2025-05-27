@@ -23,7 +23,7 @@ export default function Portfolio() {
   // Datos del portafolio
   const portfolioData = {
     name: "Anthony Johan",
-    title: "Desarrollador Web Full-Stack",
+    title: "Desarrollador Web Full-Stack Junior",
     intro:
       "Con dos años de experiencia dedicada al estudio y desarrollo práctico con TypeScript, JavaScript, React, Next.js y Nest.js. Estoy ansioso por aplicar mis habilidades en un entorno profesional.",
     skills: [
