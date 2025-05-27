@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Code, Phone } from 'lucide-react'; // Iconos para el portafolio
-import { User ,BiLogoCss3, BiLogoHtml5, BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoTypescript } from 'react-icons/bi';
+import { BiLogoCss3, BiLogoHtml5, BiLogoJavascript, BiLogoMongodb, BiLogoReact, BiLogoTypescript } from 'react-icons/bi';
 import { DiGithubBadge } from 'react-icons/di';
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { SiNestjs } from 'react-icons/si';
