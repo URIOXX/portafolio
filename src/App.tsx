@@ -55,7 +55,7 @@ function App() {
       <section id="about" className="py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="w-32 h-32 rounded-full mx-auto mb-6 bg-gray-200 flex items-center justify-center overflow-hidden shadow-lg">
-            <img src='/public/LOGO.png' className="w-30 h-30 text-gray-600" />
+            <img src='/LOGO.png' className="w-30 h-30 text-gray-600" />
           </div>
           <h1 className="text-5xl font-extrabold mb-4 leading-tight">{portfolioData.name}</h1>
           <p className="text-xl font-light mb-8">{portfolioData.title}</p>
