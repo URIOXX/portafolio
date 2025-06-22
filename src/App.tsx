@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 import {
   Github,
   Linkedin,
@@ -14,10 +14,10 @@ import {
   FileCode,
   Palette,
   GitBranch,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function Portfolio() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Datos del portafolio
   const portfolioData = {
@@ -46,23 +46,23 @@ export default function Portfolio() {
       {
         name: "Front End Development Libraries",
         link: "https://www.freecodecamp.org/certification/fcc-b6f6dbcb-1b6f-45eb-bce6-243d34d125dc/front-end-development-libraries",
-        foto:'1'
+        foto: "1",
       },
       {
         name: "Responsive Web Design",
         link: "https://www.freecodecamp.org/certification/fcc-b6f6dbcb-1b6f-45eb-bce6-243d34d125dc/responsive-web-design",
-        foto:'2'
+        foto: "2",
       },
     ],
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
@@ -70,7 +70,10 @@ export default function Portfolio() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <a href="#" className="text-xl sm:text-2xl font-bold text-indigo-600">
+            <a
+              href="#"
+              className="text-xl sm:text-2xl font-bold text-indigo-600"
+            >
               {portfolioData.name.split(" ")[0]}
             </a>
 
@@ -89,6 +92,12 @@ export default function Portfolio() {
                 Habilidades
               </a>
               <a
+                href="#certificates"
+                className="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-200"
+              >
+                Certificados
+              </a>
+              <a
                 href="#contact"
                 className="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-200"
               >
@@ -102,7 +111,11 @@ export default function Portfolio() {
               className="md:hidden p-2 rounded-md text-gray-600 hover:text-indigo-600 hover:bg-gray-100 transition-colors duration-200"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
 
@@ -125,6 +138,13 @@ export default function Portfolio() {
                   Habilidades
                 </a>
                 <a
+                  href="#certificates"
+                  onClick={closeMenu}
+                  className="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-200 px-2 py-1"
+                >
+                  Certificados
+                </a>
+                <a
                   href="#contact"
                   onClick={closeMenu}
                   className="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-200 px-2 py-1"
@@ -138,7 +158,10 @@ export default function Portfolio() {
       </header>
 
       {/* Sección Hero / Sobre Mí - Completamente responsiva */}
-      <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+      <section
+        id="about"
+        className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full mx-auto mb-6 bg-gray-200 flex items-center justify-center overflow-hidden shadow-lg">
             <img
@@ -150,7 +173,9 @@ export default function Portfolio() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-4 leading-tight">
             {portfolioData.name}
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl font-light mb-6 sm:mb-8">{portfolioData.title}</p>
+          <p className="text-lg sm:text-xl lg:text-2xl font-light mb-6 sm:mb-8">
+            {portfolioData.title}
+          </p>
           <p className="max-w-2xl lg:max-w-3xl mx-auto text-base sm:text-lg lg:text-xl leading-relaxed mb-8">
             {portfolioData.intro}
           </p>
@@ -192,7 +217,10 @@ export default function Portfolio() {
                 key={index}
                 className="bg-gray-50 hover:bg-gray-100 p-4 sm:p-6 rounded-xl shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center transition-all duration-300 transform hover:scale-105 min-h-[120px] sm:min-h-[140px]"
               >
-                <skill.icon className={`w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3 ${skill.color}`} aria-label={skill.name} />
+                <skill.icon
+                  className={`w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3 ${skill.color}`}
+                  aria-label={skill.name}
+                />
                 <span className="text-sm sm:text-base lg:text-lg font-semibold text-gray-700 leading-tight">
                   {skill.name}
                 </span>
@@ -202,7 +230,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id='certificates' className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section id="certificates" className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-8 sm:mb-12">
             <FileCode className="inline-block w-6 h-6 sm:w-8 sm:h-8 mr-3 text-indigo-600" />
@@ -239,8 +267,8 @@ export default function Portfolio() {
             Contacto
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-xl lg:max-w-2xl mx-auto leading-relaxed">
-            ¡Me encantaría saber de ti! Si tienes alguna pregunta, oportunidad o simplemente quieres saludar, no dudes
-            en contactarme.
+            ¡Me encantaría saber de ti! Si tienes alguna pregunta, oportunidad o
+            simplemente quieres saludar, no dudes en contactarme.
           </p>
 
           <div className="flex flex-col items-center space-y-4 sm:space-y-6 mb-8">
@@ -250,10 +278,11 @@ export default function Portfolio() {
                 className="flex items-center text-indigo-600 hover:text-indigo-800 hover:underline text-lg sm:text-xl transition-colors duration-200 break-all sm:break-normal"
               >
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 mr-3 flex-shrink-0" />
-                <span className="text-sm sm:text-lg lg:text-xl">{portfolioData.contact.email}</span>
+                <span className="text-sm sm:text-lg lg:text-xl">
+                  {portfolioData.contact.email}
+                </span>
               </a>
             )}
-  
           </div>
 
           <div className="flex justify-center space-x-6 sm:space-x-8">
@@ -287,10 +316,11 @@ export default function Portfolio() {
       <footer className="bg-gray-800 text-white py-6 sm:py-8 text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm sm:text-base">
-            &copy; {new Date().getFullYear()} {portfolioData.name}. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} {portfolioData.name}. Todos los
+            derechos reservados.
           </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
