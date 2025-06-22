@@ -6,7 +6,6 @@ import {
   Linkedin,
   Mail,
   Code,
-  Phone,
   Menu,
   X,
   Database,
@@ -40,11 +39,22 @@ export default function Portfolio() {
     ],
     contact: {
       email: "danthonyjohan@gmail.com",
-      phone: "+1(786)450-4130",
       linkedin: "https://www.linkedin.com/in/anthony-j-diaz-594813355",
       github: "https://github.com/URIOXX",
     },
-  }
+    certificates: [
+      {
+        name: "Front End Development Libraries",
+        link: "https://www.freecodecamp.org/certification/fcc-b6f6dbcb-1b6f-45eb-bce6-243d34d125dc/front-end-development-libraries",
+        foto:'1'
+      },
+      {
+        name: "Responsive Web Design",
+        link: "https://www.freecodecamp.org/certification/fcc-b6f6dbcb-1b6f-45eb-bce6-243d34d125dc/responsive-web-design",
+        foto:'2'
+      },
+    ],
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -132,7 +142,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full mx-auto mb-6 bg-gray-200 flex items-center justify-center overflow-hidden shadow-lg">
             <img
-              src="/placeholder.svg?height=128&width=128"
+              src="/LOGO.png"
               alt="Anthony Johan"
               className="w-full h-full object-cover"
             />
@@ -192,6 +202,35 @@ export default function Portfolio() {
         </div>
       </section>
 
+      <section id='certificates' className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-8 sm:mb-12">
+            <FileCode className="inline-block w-6 h-6 sm:w-8 sm:h-8 mr-3 text-indigo-600" />
+            Certificados
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {portfolioData.certificates.map((cert, index) => (
+              <a
+                key={index}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 hover:bg-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 flex flex-col items-center text-center"
+              >
+                <img
+                  src={`/${cert.foto}.jpg`}
+                  alt={cert.name}
+                  className="w-full h-auto mb-4 rounded-lg"
+                />
+                <span className="text-sm sm:text-base lg:text-lg font-semibold text-gray-700 leading-tight">
+                  {cert.name}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Sección de Contacto - Optimizada para móviles */}
       <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -214,15 +253,7 @@ export default function Portfolio() {
                 <span className="text-sm sm:text-lg lg:text-xl">{portfolioData.contact.email}</span>
               </a>
             )}
-            {portfolioData.contact.phone && (
-              <a
-                href={`tel:${portfolioData.contact.phone}`}
-                className="flex items-center text-indigo-600 hover:text-indigo-800 hover:underline text-lg sm:text-xl transition-colors duration-200"
-              >
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-3" />
-                <span className="text-sm sm:text-lg lg:text-xl">{portfolioData.contact.phone}</span>
-              </a>
-            )}
+  
           </div>
 
           <div className="flex justify-center space-x-6 sm:space-x-8">
